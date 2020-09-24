@@ -19,27 +19,34 @@ namespace NToW.Models
       { 18, "Eighteen" }, { 19, "Nineteen" }
       };
       Dictionary<int, string> bigPlaces = new Dictionary<int, string>(){
-      { 2, "Hundred" }, { 3, "Thousand" }, { 6, "Million" }, { 9, "Billion" }, { 12, "Trillion" }
+      { 3, "Hundred" }, { 4, "Thousand" }, { 6, "Hundred" }, { 7, "Million" }, { 9, "Hundred" }, { 10, "Billion" }, { 12, "Hundred" }, { 13, "Trillion" }
       };
 
-      string formalWord = "n";
+      string word = "";
+      string formalWord = "";
       int a = 0;
       for (int i = userInput.Length; i > 0; i--)
       {
         string character = userInput[a].ToString();
         int user = int.Parse(character);
-        if (i == 1)
+        if ( user == 0 )
         {
-          Console.WriteLine("in ones");
+          if (i == 1 && userInput.Length == 1)
+          {
+            formalWord = "Zero";
+          }
+        }
+        else if (i == 1 || i == 3 || i == 4 || i == 6 || i == 7 || i == 9 || i == 10 || i == 12 || i == 13)
+        {
           foreach (KeyValuePair<int, string> set in singlesPlace)
           {
             if (set.Key == user)
             {
-              formalWord = set.Value;
+              formalWord += set.Value;
             }
           }
         }
-        if ( i == 2 )
+        else if ( i == 2 || i == 5 || i == 8 || i == 11)
         {
           if ( user == 1 )
           {
@@ -51,12 +58,54 @@ namespace NToW.Models
           }  
           foreach (KeyValuePair<int, string> set in doublesPlace)
           {
-            formalWord = set.Value;
+            if (set.Key == user)
+            {
+              formalWord += set.Value;
+            }
           }
         }
-      a++;
+        a++;
+        if (formalWord.Length > 5)
+        {
+          word = formalWord.Substring(formalWord.Length - 5, 5);
+        }
+        int c = 0;
+        if (word.Contains("sand"))
+        {
+
+        }
+        else if ((word.Contains("ered"))
+        {
+        c = 1
+        }
+        else if (word.Contains("ion"))
+        {
+        c = 1
+        }
+        
+        if (user != 0)
+        {
+        foreach (KeyValuePair<int, string> set in bigPlaces)
+          {
+            if (set.Key == i)
+            {
+              formalWord += set.Value;
+            }
+          }
+        }
+        else if ( i != 3 || !) 
+        {
+        foreach (KeyValuePair<int, string> set in bigPlaces)
+          {
+            if (set.Key == i)
+            {
+              formalWord += set.Value;
+            }
+          }
+        }
+        
       }
-    return formalWord;
+      return formalWord;
     }
   }
 }
