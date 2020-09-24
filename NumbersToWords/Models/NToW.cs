@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using System;
 
 namespace NToW.Models
 {
@@ -18,27 +19,44 @@ namespace NToW.Models
       { 18, "Eighteen" }, { 19, "Nineteen" }
       };
       Dictionary<int, string> bigPlaces = new Dictionary<int, string>(){
-      { 3, "Hundred" }, { 4, "Thousand" }, { 7, "Million" }, { 10, "Billion" }, { 13, "Trillion" }
+      { 2, "Hundred" }, { 3, "Thousand" }, { 6, "Million" }, { 9, "Billion" }, { 12, "Trillion" }
       };
 
-      string formalWord = "Null";
-      // int size = userInput.Length;
-
-      // for (int i = size; i < 1; i--)
-      // {
-      //   if (i == 1)
-      //   {
-      //     int user = int.Parse(userInput[i]);
-      //     foreach (KeyValuePair<int, string> set in singlesPlace)
-      //     {
-      //       if (set.Key == user)
-      //       {
-      //         formalWord = set.Value;
-      //       }
-      //     }
-      //   }
-      // }
-      return formalWord;
+      string formalWord = "n";
+      int a = 0;
+      for (int i = userInput.Length; i > 0; i--)
+      {
+        string character = userInput[a].ToString();
+        int user = int.Parse(character);
+        if (i == 1)
+        {
+          Console.WriteLine("in ones");
+          foreach (KeyValuePair<int, string> set in singlesPlace)
+          {
+            if (set.Key == user)
+            {
+              formalWord = set.Value;
+            }
+          }
+        }
+        if ( i == 2 )
+        {
+          if ( user == 1 )
+          {
+            string numString = userInput[(a+1)].ToString();
+            int num1 = int.Parse(numString);
+            user = 10 + num1;
+            i--;
+            a++;
+          }  
+          foreach (KeyValuePair<int, string> set in doublesPlace)
+          {
+            formalWord = set.Value;
+          }
+        }
+      a++;
+      }
+    return formalWord;
     }
   }
 }
