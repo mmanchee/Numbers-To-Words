@@ -9,7 +9,7 @@ namespace NToW.Tests
     [TestMethod]
     public void GetWord_GetWordFromUserNumber_Word()
     {
-      Assert.AreEqual("1", Word.GetWord("one"));
+      Assert.AreEqual("One", Numbers.GetWord("1"));
     }
   }
 }
