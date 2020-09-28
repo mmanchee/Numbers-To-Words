@@ -5,6 +5,8 @@ namespace NToW.Models
 {
   public class Numbers
   {
+    public string NtWs { get; set; }
+    
     public static string GetWord(string userInput)
     {
       Dictionary<int, string> singlesPlace = new Dictionary<int, string>(){
@@ -12,7 +14,7 @@ namespace NToW.Models
       { 6, "Six" }, { 7, "Seven" }, { 8, "Eight" }, { 9, "Nine" }
       };
       Dictionary<int, string> doublesPlace = new Dictionary<int, string>(){
-      { 2, "Twenty" }, { 3, "Thirty" }, { 4, "Fourty" }, { 5, "Fifty" },
+      { 2, "Twenty" }, { 3, "Thirty" }, { 4, "Forty" }, { 5, "Fifty" },
       { 6, "Sixty" }, { 7, "Seventy" }, { 8, "Eighty" }, { 9, "Ninety" },
       { 10, "Ten" }, { 11, "Eleven" }, { 12, "Twelve" }, { 13, "Thirteen" },
       { 14, "Fourteen" }, { 15, "Fifteen"}, { 16, "Sixteen" }, { 17, "Seventeen" },
@@ -74,13 +76,13 @@ namespace NToW.Models
         {
 
         }
-        else if ((word.Contains("ered"))
+        else if ((word.Contains("ered")))
         {
-        c = 1
+        c = 1;
         }
         else if (word.Contains("ion"))
         {
-        c = 1
+        c = 1;
         }
         
         if (user != 0)
@@ -93,7 +95,7 @@ namespace NToW.Models
             }
           }
         }
-        else if ( i != 3 || !) 
+        else if ( i != 3)
         {
         foreach (KeyValuePair<int, string> set in bigPlaces)
           {

@@ -1,4 +1,3 @@
-/NumbersToWords/obj
-/NumbersToWords/bin
-/NumbersToWords.Tests/obj
-/NumbersToWords.Tests/bin
+*/obj/
+*/bin/
+.vscode
