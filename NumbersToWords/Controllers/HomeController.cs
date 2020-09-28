@@ -12,7 +12,7 @@ namespace NToW.Controllers
     public ActionResult Words(string stringNum)
     {
       Numbers myNumber = new Numbers();
-      myNumber.NtWs = stringNum;
+      myNumber.NtWs = Numbers.GetWord(stringNum);
       return View(myNumber);
     }
   }  
