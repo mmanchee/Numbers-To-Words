@@ -12,7 +12,8 @@ namespace NToW.Controllers
     public ActionResult Words(string stringNum)
     {
       Numbers myNumber = new Numbers();
-      myNumber.NtWs = Numbers.GetWord(stringNum);
+      myNumber.NumberString = stringNum;
+      myNumber.WordString = myNumber.GetWord(stringNum);
       return View(myNumber);
     }
   }  
